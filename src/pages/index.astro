@@ -1,5 +1,12 @@
 ---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import StravaEmbed from "../components/StravaEmbed.astro";
+import RomanianGif from "../components/RomanianGif.astro";
+import Header from "../components/Header.astro";
 
+const pageTitle = "Trans 2025 - liga.cc";
 ---
 
 <html lang="en">
@@ -8,13 +15,22 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Trans.cc 2025</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/trasa/">Trasa</a>
+    <Header />
 
-    <h1>LIGA.CC - TRANS 2025</h1>
+    <div class="container">
+      <h1>{pageTitle}</h1>
+
+      Wiadomo co intersuje nas najbardziej
+      <StravaEmbed />
+    </div>
+    <Footer />
+    <script>
+      document.querySelector(".hamburger")?.addEventListener("click", () => {
+        document.querySelector(".nav-links")?.classList.toggle("expanded");
+      });
+    </script>
   </body>
 </html>

@@ -1,58 +1,70 @@
+---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+const pageTitle = "Siedmiogród – Historia i Nazwy";
+
+const identity = {
+  firstName: "Milosz",
+  country: "Wrona",
+  occupation: "Katowice",
+  hobbies: ["Narty", "Rower", "Natura"],
+};
+
+const skills = [
+  "Brawurowa jazda na rowerze",
+  "Brawurowa jazda na nartach",
+  "Brawurowa jazda zafirą",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+---
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siedmiogród – Historia i Nazwy</title>
-  <style>
-    body {
-      font-family: "Arial", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .highlight {
-      color: #e74c3c;
-      font-weight: bold;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #ecf0f1;
-      margin: 5px 0;
-      padding: 10px;
-      border-left: 5px solid #e74c3c;
-      border-radius: 5px;
-    }
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 20px;
-      color: #7f8c8d;
-    }
-  </style>
 </head>
 <body>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/trasa/">Trasa</a>
-
+  <Header />
   <div class="container">
-    <h1>Siedmiogród – Historia i Nazwy</h1>
+    <h1>{pageTitle}</h1>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+    <p>Oto kilka faktów o mnie:</p>
+    <ul>
+      <li>Mam na imię {identity.firstName}.</li>
+      <li>
+        Mieszkam w {identity.country} i pracuję jako {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Moje dwie pasje to: {identity.hobbies[0]} i {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>Moje umiejętności to:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
     <p>
       Siedmiogród to region pełen legend, zamków i kulturowego miksu. Każdy
       nazywa go inaczej:
@@ -82,4 +94,5 @@
     </p>
     <p class="footer">© 2025 Twoja Stara | Wszystkie prawa zastrzeżone</p>
   </div>
+  <Footer />
 </body>

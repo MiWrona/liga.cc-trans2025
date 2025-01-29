@@ -1,0 +1,120 @@
+/* Import średniowiecznej czcionki */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+html {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg")
+    no-repeat center center fixed;
+  background-size: cover;
+  font-family: "MedievalSharp", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+/* Stylizacja nawigacji */
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: #ff9776;
+}
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background-color: #ff9776;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #ff9776;
+}
+
+.expanded {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Średniowieczne ozdoby */
+.container {
+  position: relative;
+  border: 5px solid #3e2f1d;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 245, 230, 0.9);
+  padding: 20px;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container::before {
+  top: -40px;
+  left: -40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Transylvania.svg");
+}
+
+.container::after {
+  bottom: -40px;
+  right: -40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Transylvania.svg");
+}
