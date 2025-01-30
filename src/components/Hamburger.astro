@@ -1,5 +1,79 @@
-<div class="hamburger">
+<style>
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #ff9776;
+  }
+
+  .hamburger {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .line {
+    width: 30px; /* Zmniejszenie szerokości linii */
+    height: 5px;
+    background-color: #ff9776; /* Dostosuj kolor, jeśli potrzebujesz */
+    transition:
+      transform 0.4s ease-in-out,
+      opacity 0.3s ease-in-out;
+    position: absolute;
+  }
+
+  /* Pierwsza linia */
+  .line:nth-child(1) {
+    top: 0;
+  }
+
+  /* Środkowa linia */
+  .line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Trzecia linia */
+  .line:nth-child(3) {
+    bottom: 0;
+  }
+
+  /* Stan aktywny - animacja */
+  .hamburger.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .line:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+  }
+</style>
+
+<div class="hamburger" onclick="toggleMenu()">
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>
 </div>
+
+<script defer>
+  function toggleMenu() {
+    const hamburger = document.querySelector(".hamburger");
+    if (hamburger) {
+      hamburger.classList.toggle("active");
+    }
+  }
+</script>

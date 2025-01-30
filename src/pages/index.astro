@@ -1,36 +1,13 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import StravaEmbed from "../components/StravaEmbed.astro";
-import RomanianGif from "../components/RomanianGif.astro";
-import Header from "../components/Header.astro";
 
 const pageTitle = "Trans 2025 - liga.cc";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-
-    <div class="container">
-      <h1>{pageTitle}</h1>
-
-      Wiadomo co intersuje nas najbardziej
-      <StravaEmbed />
-    </div>
-    <Footer />
-    <script>
-      document.querySelector(".hamburger")?.addEventListener("click", () => {
-        document.querySelector(".nav-links")?.classList.toggle("expanded");
-      });
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="container">
+    Wiadomo co intersuje nas najbardziej
+    <StravaEmbed />
+  </div>
+</BaseLayout>

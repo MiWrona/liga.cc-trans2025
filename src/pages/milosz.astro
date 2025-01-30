@@ -1,21 +1,11 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Milosz W";
 
 const skillColor = "navy";
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{pageTitle}</title>
-</head>
-<body>
-  <Header />
-
+<BaseLayout pageTitle={pageTitle}>
   <div class="container">
     <h1>Miłosz W. – Człowiek Akcji</h1>
     <p>
@@ -41,5 +31,4 @@ const skillColor = "navy";
     <p>Masz pytania? Skontaktuj się!</p>
     <button onclick="alert('Spierdalaj!')">Wyślij wiadomość</button>
   </div>
-  <Footer />
-</body>
+</BaseLayout>

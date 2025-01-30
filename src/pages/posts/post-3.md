@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Niezbędne wyposażenie na wyprawę bikepackingową"
 pubDate: 2025-01-29
 description: "Co spakować na wyprawę bikepackingową? Lista niezbędnego sprzętu."

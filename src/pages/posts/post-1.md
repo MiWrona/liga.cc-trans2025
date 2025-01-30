@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Wielka Wyprawa Rowerowa"
 pubDate: 2022-07-01
 description: "Przygotowania do epickiej rowerowej przygody."
@@ -11,9 +12,7 @@ tags: ["rowery", "podróże", "przygoda", "wyprawa"]
 
 # Trans 2025
 
-Published on: 2022-07-01
-
-Ruszamy na kolejną epicką wyprawę rowerową! Przygotowania idą pełną parą – smarujemy łańcuchy, sprawdzamy hamulce i kompletujemy ekwipunek. Rok temu przejechanie szlaku Alpe-Adria było niesamowitym doświadczeniem, a w tym roku szykujemy się na równie epicką wyprawę. Tym razem kierunek: **Rumunia**!
+Ruszamy na kolejną źźćć epicką wyprawę rowerową! Przygotowania idą pełną parą – smarujemy łańcuchy, sprawdzamy hamulce i kompletujemy ekwipunek. Rok temu przejechanie szlaku Alpe-Adria było niesamowitym doświadczeniem, a w tym roku szykujemy się na równie epicką wyprawę. Tym razem kierunek: **Rumunia**!
 
 ## Gdzie rowerem, tam przygoda
 

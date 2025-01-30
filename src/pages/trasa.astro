@@ -1,24 +1,14 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import StravaEmbed from "../components/StravaEmbed.astro";
-import Header from "../components/Header.astro";
 
 const pageTitle = "Trasa";
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{pageTitle}</title>
-</head>
-<body>
-  <Header />
-
+<BaseLayout pageTitle={pageTitle}>
   <div class="container">
     <h1>{pageTitle}</h1>
     <StravaEmbed />
   </div>
-  <Footer />
-</body>
+</BaseLayout>

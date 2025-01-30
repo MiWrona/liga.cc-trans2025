@@ -2,9 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 
 html {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg")
-    no-repeat center center fixed;
+  background: linear-gradient(
+    to right,
+    #002b7f 33.33%,
+    #fcd116 33.33%,
+    #fcd116 66.66%,
+    #ce1126 66.66%
+  );
   background-size: cover;
+  background-attachment: fixed;
   font-family: "MedievalSharp", sans-serif;
 }
 
@@ -27,19 +33,6 @@ h1 {
 }
 
 /* Stylizacja nawigacji */
-.hamburger {
-  padding-right: 20px;
-  cursor: pointer;
-}
-
-.hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ff9776;
-}
-
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -51,12 +44,15 @@ h1 {
 
 .nav-links a {
   display: block;
+  color: #3e2f1d;
   text-align: center;
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .nav-links a:hover,
@@ -68,18 +64,42 @@ h1 {
   display: unset;
 }
 
+.nav-links {
+  width: auto;
+  background: none;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+    visibility 0s linear 0.4s;
+}
+
+.nav-links.expanded {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
     width: auto;
     background: none;
+    justify-content: center;
   }
 
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+
+  .nav-links.expanded {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
   }
 
   .hamburger {
@@ -105,16 +125,4 @@ h1 {
   height: 80px;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.container::before {
-  top: -40px;
-  left: -40px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Transylvania.svg");
-}
-
-.container::after {
-  bottom: -40px;
-  right: -40px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Transylvania.svg");
 }

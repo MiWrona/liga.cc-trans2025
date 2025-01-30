@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "Rowerowa Wyprawa po Siedmiogrodzie"
 pubDate: 2025-01-29
 description: "Odkrywamy najciekawsze atrakcje na trasie rowerowej przez Siedmiogród."
